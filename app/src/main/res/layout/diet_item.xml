@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.example.myapplication.R" />
+
+
+        <variable
+            name="meal"
+            type="com.example.myapplication.responsemodel.Meals" />
+
+        <variable
+            name="position"
+            type="Integer" />
+
+        <variable
+            name="chieldClickHandler"
+            type="com.example.myapplication.clickHandler.RecuclerChildClickHandler" />
+
+        <variable
+            name="checkedChangListner"
+            type="com.example.myapplication.clickHandler.CheckedChangeListner" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        style="@style/cardStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:paddingLeft="@dimen/dp_15dp"
+                android:paddingTop="@dimen/dp_20dp"
+                android:paddingBottom="@dimen/dp_20dp"
+                android:text="@{meal.getDayValue()}"
+                android:textColor="#000000"
+                android:textSize="@dimen/sp_17sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvWeekAlert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20dp"
+                android:layout_marginTop="@dimen/dp_20dp"
+                android:background="#ffffff"
+                android:text="@string/weekly_alert"
+                android:textColor="#000000"
+                app:layout_constraintHorizontal_bias=".95"
+                app:layout_constraintLeft_toRightOf="@id/tvDay"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/weekltAlert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20dp"
+                android:layout_marginTop="@dimen/dp_5dp"
+                android:clickable="true"
+                android:checked="@={meal.check}"
+                android:onClick="@{(v)->chieldClickHandler.onClick(meal,v,position)}"
+                app:layout_constraintHorizontal_bias=".95"
+                app:layout_constraintLeft_toRightOf="@id/tvDay"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvWeekAlert" />
+
+            <TextView
+                android:id="@+id/tvFoodFeild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20dp"
+                android:layout_marginTop="@dimen/dp_10dp"
+                android:text="@string/food"
+                android:clickable="true"
+                android:textColor="#000000"
+                android:textSize="@dimen/sp_15sp"
+                android:onClick="@{(v)->chieldClickHandler.onClick(meal,v,position)}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDay" />
+
+            <TextView
+                android:id="@+id/tvFoodValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20dp"
+                android:layout_marginTop="@dimen/dp_10dp"
+                android:text="@{meal.food}"
+                android:textColor="#000000"
+
+                android:textSize="@dimen/sp_15sp"
+                app:layout_constraintLeft_toRightOf="@+id/tvFoodFeild"
+                app:layout_constraintTop_toBottomOf="@id/tvDay" />
+
+            <TextView
+                android:id="@+id/tvMealTimeFeild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20dp"
+                android:layout_marginTop="@dimen/dp_10dp"
+                android:text="@string/meal_time"
+                android:textColor="#000000"
+                android:textSize="@dimen/sp_15sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvFoodFeild" />
+
+            <TextView
+                android:id="@+id/tvMealTimeValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20dp"
+                android:layout_marginTop="@dimen/dp_10dp"
+                android:text="@{meal.meal_time}"
+                android:textColor="#000000"
+                android:textSize="@dimen/sp_15sp"
+                app:layout_constraintLeft_toRightOf="@+id/tvMealTimeFeild"
+                app:layout_constraintTop_toBottomOf="@id/tvFoodFeild" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

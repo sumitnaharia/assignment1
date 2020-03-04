@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="enter_location">Enter Loacation</string>
+    <string name="error_network">Network Error</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="trackId">Track Id</string>
+    <string name="tarck_name">Track Name</string>
+    <string name="tarck_price">Track Price</string>
+    <string name="collection_id">Collection id</string>
+    <string name="collection_price">CollectionPrice</string>
+    <string name="food">Food</string>
+    <string name="meal_time">Meal Time</string>
+    <string name="weekly_alert">Weekly Alert</string>
+
+</resources>

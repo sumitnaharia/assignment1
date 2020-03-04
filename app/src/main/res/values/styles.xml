@@ -1,0 +1,50 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_back_btn</item>
+        <item name="actionMenuTextColor">@color/colorTextPrimary</item>
+        <item name="android:textAppearance">@style/textAppearance</item>
+
+
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="listPreferredItemPaddingLeft">5dp</item>
+        <item name="android:listPreferredItemPaddingRight">0dp</item>
+        <!--TODO put bellow color in v21 before launch-->
+        <item name="android:navigationBarColor">@android:color/black</item>
+
+    </style>
+
+    <style name="textAppearance" parent="@android:style/TextAppearance.Small">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textColorPrimary">@color/colorTextPrimary</item>
+        <item name="android:textColorSecondary">@color/colorTextPrimary</item>
+        <item name="android:textColorSecondaryNoDisable">@color/colorTextPrimary</item>
+        <item name="android:textColorSecondaryInverseNoDisable">@color/colorTextPrimary</item>
+        <item name="android:textColorHint">@color/colorTextSecondary</item>
+    </style>
+
+    <style name="toolbarStyle" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">@color/colorTextPrimary</item>
+        <item name="android:textColorSecondary">@color/colorTextSecondary</item>
+        <item name="android:textAppearance">@style/menuItem</item>
+    </style>
+
+    <style name="menuItem">
+        <item name="android:textStyle">italic</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+    </style>
+
+    <style name="cardStyle" parent="CardView">
+        <item name="cardCornerRadius">5dp</item>
+        <item name="cardBackgroundColor">@color/colorTextPrimary</item>
+        <item name="cardUseCompatPadding">true</item>
+    </style>
+    <color name="colorTextSecondary">#000000</color>
+</resources>

@@ -10,6 +10,7 @@ import com.example.myapplication.network.WorkDietData
 import com.example.myapplication.responsemodel.Meals
 import com.example.myapplication.responsemodel.WeekDietRootModel
 import io.reactivex.Observable
+import io.reactivex.functions.Consumer
 import retrofit2.Call
 
 class MealsRepository {
@@ -27,13 +28,20 @@ class MealsRepository {
                 var i = 0
 
 
-//                var list = Observable.just(item).concatMap {
-//                    Observable.just(
-//                        it.week_diet_data.monday,
-//                        it.week_diet_data.wednesday,
-//                        it.week_diet_data.thursday
-//                    )
-//                }.filter {
+                var list = Observable.just(item).switchMap {
+                    Observable.just(
+                        it.week_diet_data.monday,
+                        it.week_diet_data.wednesday,
+                        it.week_diet_data.thursday
+                    )
+                }.subscribe(Consumer {
+
+                })
+
+
+
+
+//                    .filter {
 //                    if (it != null)
 //                        true
 //                    else
@@ -46,6 +54,7 @@ class MealsRepository {
 //                }.toList().blockingGet()
                 if (database.mealsDao().getMealsList().size <= 0)
                     database.mealsDao().insertAllMeals(makeList(item))
+
             }
 
 

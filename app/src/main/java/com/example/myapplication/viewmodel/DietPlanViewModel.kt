@@ -77,14 +77,14 @@ class DietPlanViewModel(application: Application) : BaseViewModel(application) {
             if (hourOfDay == 0) {
                 hourOfDay = 23
             } else {
-                hourOfDay - 1
+                hourOfDay -=1
             }
-            minutesOfDay = 60 - minutesOfDay
+            minutesOfDay = 60 - (5-minutesOfDay)
         } else {
             minutesOfDay -= 5
         }
         val calendar = Calendar.getInstance()
-        calendar.set(Calendar.DAY_OF_MONTH, getDayOfMonth(meal.day))
+        calendar.set(Calendar.DAY_OF_MONTH, getDayOfMonth(meal.day)-3)
         calendar.set(Calendar.HOUR_OF_DAY, hourOfDay)
         calendar.set(Calendar.MINUTE, minutesOfDay)
         return calendar

@@ -39,7 +39,7 @@ class DietIntentService : JobIntentService() {
 
     }
 
-    private fun sendNotification(intent: Intent) {
+    private fun sendNotification(intent1: Intent) {
         val intent =
             Intent(AssigmentApplication.getApplicationInstance(), DietPlanActivity::class.java)
         intent.setAction("NOTIFICATION")
@@ -55,7 +55,7 @@ class DietIntentService : JobIntentService() {
         val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         val notificationBuilder = NotificationCompat.Builder(this)
             .setSmallIcon(R.drawable.alert_dark_frame)
-            .setContentTitle("Take Your food \n"+intent.getStringExtra("meal_name"))
+            .setContentTitle("Take Your food \n"+intent1.getStringExtra("meal_name"))
             .setAutoCancel(true)
             .setChannelId(CHANNEL_ID)
             .setSound(defaultSoundUri)

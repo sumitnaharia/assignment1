@@ -84,7 +84,7 @@ class DietPlanViewModel(application: Application) : BaseViewModel(application) {
             minutesOfDay -= 5
         }
         val calendar = Calendar.getInstance()
-        calendar.set(Calendar.DAY_OF_MONTH, getDayOfMonth(meal.day)-3)
+        calendar.set(Calendar.DAY_OF_MONTH, getDayOfMonth(meal.day))
         calendar.set(Calendar.HOUR_OF_DAY, hourOfDay)
         calendar.set(Calendar.MINUTE, minutesOfDay)
         return calendar
